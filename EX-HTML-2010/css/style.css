@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffead7;
+}
+main{
+
+    margin: 0px 600px;
+    border: 1px solid;
+    /* background-color: aqua; */
+}
+.tom{
+    font-size: 30px;;
+}
+.menu{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding: 5px;
+    padding: 15px;
+}
+nav{
+    position: relative;
+    border-bottom: 1px solid;
+}
+ul{
+        position: absolute;
+        right: 0px;
+        left:0px;
+        height: 10px;
+        line-height: 10px; 
+        display: inline-block;
+        text-align: center;
+        justify-content: center;
+}
+li{
+    display: inline-block;
+    padding: 20px;
+    font-size: 20px;
+}
+.btn-inscreva{   
+    width: 125px;
+    height: 35px;
+    font-weight: bold;
+    justify-content: center;
+    background-color: #ed4d1b;
+    box-shadow: 3px 3px 0 0;
+    position: absolute;
+    display: flex;
+    margin-left: 950px;
+}
+.musica .impactante{
+    color:#ed4d1b;
+}
+.musica{
+    display: flex;
+}
+.foto-musica{
+    display: flex;
+    justify-content: end;
+    text-align: end;
+}
+.txt-mus{
+    font-size: 15px;
+}
+#texto, .foto-musica{
+    width: 50%;
+}
+#texto{
+    font-size: 50px;
+    padding: 0px;
+    margin: 0px auto;
+}
