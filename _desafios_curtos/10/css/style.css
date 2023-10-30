@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* deixou centralizado no meio da pagina*/    
+    font-family: sans-serif;
+}
+
+.btn{
+    border: 2px solid rgb(0, 165, 124);
+    background: none;
+    color: rgb(0, 165, 124);
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.5;
+    position: relative;
+    overflow: hidden; /* O que estourar o tamanho do elemento, vai ser escondido */
+}
+
+.btn:hover{
+    color: white;
+}
+
+.btn:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 165, 124);
+    z-index: -1; /* Jogar esse elemento para atras/outra camada */
+    border-radius: 0 0 50% 50%;
+    height: 0%;
+    /* carregar a ALTURA em 100% para dps zerar, para gerar um efeito */
+    transition: all 0.5s;
+}
+
+.btn:hover:before{
+    height: 190%;
+}
