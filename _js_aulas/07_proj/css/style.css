@@ -346,7 +346,7 @@ form input, textarea{
     border: none;
     outline: none;
     background: hsla(260, 100%, 44%, 0.1);
-    margin-bottom: 1rem;;
+    margin-bottom: 1rem;
     color: var(--text-color);
 }
 
@@ -373,3 +373,124 @@ form textarea{
 .contact-button:hover{
     background-color: var(--hover);
 }
+
+.footer{
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    color: #000;
+}
+
+.footer h2{
+    font-size: 1.5rem;
+    margin-top: 1.6rem;
+    color: var(--text-color);
+}
+
+.footer-social a i{
+    color: rgb(10, 26, 208);
+    font-size: 25px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: #fff;
+    line-height: 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.copyright{
+    padding: 20px;
+    background: var(--main-color);
+    text-align: center;
+    color: #fff;
+}
+
+.copyright a{
+    color: #22cf91;
+} 
+
+@media (max-width: 991px){
+    .header{
+        padding: 18px 4%;
+    }
+    .section{
+        padding: 50px 4%;
+    }
+}
+@media (max-width: 881px){
+    :root{
+        --big-font: 2.7rem;
+        --medium-font: 1.4rem;
+    }
+}
+@media (max-width: 768px){
+    :root{
+        --big-font: 2.4rem;
+        --medium-font: 1.2rem;
+    }
+    header{
+        padding: 11px 4%;    
+    }
+    #menu-icon{
+        display: initial; /* Habilitamos o ícone(que estava como HIDDEN) */
+        color: var(--text-color)
+    }
+    header .navbar{
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        box-shadow: 0 4px 4px rgb(0 0 0 /10%);
+        transition: 0.2s ease;
+        /* ease-> delay */
+        text-align: center;
+    }
+    .navbar .active{
+        top: 100%;        
+    }
+    .navbar a{
+        padding: 1.5rem;
+        display: block;
+        background: var(--bg-color);
+    }
+    #darkmode{
+        position: absolute;
+        top: 1.4rem;
+        right: 2rem;
+    }
+    .scroll-down{
+        display: none;
+    }
+    .home-img{
+        order: initial;
+    }
+    .about-container{
+        grid-template-columns: 1fr;
+    }
+    .about-img{
+        display: flex;
+        justify-content: center;
+    }
+    .skills-container{
+        grid-template-columns: 1fr;
+    }
+    .skills-img img{
+        padding-left: 0;
+    }
+    .skills-img{
+        padding-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+    .contact-form form{
+        width: 300px
+    }
+    .contact-button{
+        margin-left:23%;
+    }
+}
+
