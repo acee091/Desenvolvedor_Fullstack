@@ -42,6 +42,7 @@ ul li{
     }
 }
 
+/* Animação pra aprecer uma letra de cada vez */
 ul li:nth-child(1){
     animation-delay: 0s;
 }

@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
- 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-behavior: smooth; /*  a forma como vai deslizando na tela */
+    scroll-padding-top: 2rem; /* Espaçamento de cada scroll  */
     font-family: "Poppins", sans-serif;
 }
-
+ 
 :root{
     --main-color: #033a80;
     --bg-color: #fff;
@@ -19,50 +19,52 @@
     --big-font: 3.2rem;
     --medium-font: 1.8rem;
     --p-font: 0.941rem;
+    /* Definindo uma cor padrão */
 }
 
-section {
+section{
     padding: 50px 10%;
+    /* nos lados vai ter 10% do tamanho padrão */
 }
 
 body.active{
     --text-color: #fff;
-    --bg-color:#0f0c27;
+    --bg-color: #0f0c27;
 }
+
 body{
-    background:  var(--bg-color);
+    background: var(--bg-color);
     color: var(--main-color);
 }
 
 .heading{
-    
     text-align: center;
 }
+
 .heading h2{
-    
     font-size: 30px;
 }
 .heading span{
-    
     font-size: var(--p-font);
-    color: rgb(2, 166,70)
+    color: rgb(2, 166, 70);
 }
 
-header {
+header{
     position: fixed;
     width: 100%;
-    top:0;
+    top: 0;
     right: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--bg-color);
+    background-color: var(--bg-color);
     padding: 13px 10%;
     transition: 0.2s;
-    box-shadow:  -3px -3px 7px #ffffff73, 2px 2px 5px rgba(91, 104, 121, 0.288);
+    box-shadow: -3px -3px 7px #ffff, 2px 2px 5px rgba(91, 104, 121, 0.288);
 }
 
+/* Disparar o shadow no JAVASCRIPT */
 header.shadow{
     box-shadow: 0 0 4px rgb(14 55 54 / 15%);
 }
@@ -72,6 +74,7 @@ header.shadow{
     font-weight: 600;
     color: var(--text-color);
 }
+
 .logo span{
     font-size: 1.61rem;
     font-weight: 600;
@@ -87,36 +90,42 @@ header.shadow{
     color: var(--text-color);
     font-weight: 500;
 }
+
 .navbar a:hover{
+    /* Cor que foi definida no :ROOT */
     color: var(--hover);
 }
+
 #menu-icon{
     font-size: 24px;
     cursor: pointer;
     z-index: 10001;
     display: none;
+    /* none -> não vai aparecer */
 }
 
 #darkmode{
     font-size: 22px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .home{
     position: relative;
     width: 100%;
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 0.2fr 1fr 1fr;
+    display: grid; /* Divide o layout em colunas */
+    grid-template-columns: 0.2fr 1fr 1fr; /* Dividir em 3 colunas */
     align-items: center;
     gap: 1rem;
 }
-.home-img{   
-    order: 3;
+
+.home-img{
+    order: 3; /* Vai ser a terceira coluna */
 }
 
 .home-img img{
     width: 100%;
+    /* Preenche toda a largura do grid -> fica fixada */
 }
 
 .home-text span{
@@ -133,24 +142,25 @@ header.shadow{
 .home-text p{
     font-size: var(--p-font);
     font-weight: 400;
-    margin: 0.7rem 0 1rem;
+    margin: 0.7rem 0 1rem;    
 }
 
 .social{
     display: flex;
     flex-direction: column;
 }
+
 .social a{
     margin-bottom: 1rem;
     font-size: 22px;
-    color: var(--text-color)
+    color: var(--text-color);
 }
 .social a:hover{
     display: inline-block;
     background-color: var(--main-color);
     color: #fff;
     padding: 0.7rem 1.3rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; 
 }
 
 .btn{
@@ -160,6 +170,7 @@ header.shadow{
     padding: 0.7rem 1.3rem;
     border-radius: 0.5rem;
 }
+
 .btn:hover{
     background-color: var(--hover);
 }
@@ -168,7 +179,7 @@ header.shadow{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 2rem;    
 }
 
 .about-img img{
@@ -176,7 +187,7 @@ header.shadow{
     border-radius: 0.5rem;
 }
 
-.about-text p {
+.about-text p{
     font-size: var(--p-font);
     font-weight: 400;
     text-align: justify;
@@ -186,7 +197,7 @@ header.shadow{
     margin: 1rem 0 1.4rem;
 }
 
-.information .info-box {
+.information .info-box{
     display: flex;
     align-items: center;
     margin-bottom: 1.4rem;
@@ -194,24 +205,23 @@ header.shadow{
 .information .info-box .bx{
     font-size: 22px;
 }
-
 .information .info-box span{
     font-weight: 400;
     margin-left: 1rem;
 }
 
-.skills-container {
-    
+.skills-img img{
+    width: 80%;
+    padding-left: 4rem;
+    object-position: center;
+}
+
+.skills-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
     margin-top: 4rem;
-}
-.skills-img img{
-    width: 80%;
-    padding-left: 4rem;
-    object-position: center;
 }
 
 .bars-box{
@@ -222,9 +232,10 @@ header.shadow{
     padding: 1rem 0;
     margin-bottom: 1rem;
 }
+
 .bars-box h3, span{
-   font-size: 1.1rem;
-   font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .light-bar{
@@ -262,16 +273,18 @@ header.shadow{
     width: 65%;
 }
 .git-bar{
-    width: 90%;
+    width: 94%;
 }
 
-.services-content {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-   justify-content: center;
-   gap: 1rem;
-   margin-top: 2rem;
+.services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    justify-content: center;
+    /* vai se ajustar com tamanho maximo de 200px */
+    gap: 1rem;
+    margin-top: 2rem;
 }
+
 .services-box{
     padding: 20px;
     width: 260px;
@@ -280,49 +293,50 @@ header.shadow{
     align-items: center;
     text-align: center;
     border-radius: 0.5rem;
-    border-bottom: 2px solid var(--main-color) ;
-    box-shadow: 0 2px 7px rgb(14 55 54 /15%);
+    border-bottom: 2px solid var(--main-color);
+    box-shadow: 0 2px 7px rgb(14 55 54 /15%) ; 
 }
 
 .services-box:hover{
-    background-color: #02225a;
-    
+    background-color: var(--main-color);
 }
 
 .services-box h3{
     font-size: 1rem;
     font-weight: 600;
-    margin: 0.7rem 0 0.4rem ;
+    margin: 0.7rem 0 0.4rem;
 }
+
 .services-box:hover h3{
     color: #fff
 }
 .services-box .bx{
     padding-top: 2rem;
     font-size: 54px;
-    color:var(--main-color)
+    color: var(--main-color)
 }
+
 .services-box:hover .bx{
     color: #22cf91;
 }
 .services-box a{
-    font-weight: 500;
     font-size: var(--p-font);
-    color:var(--main-color)
+    font-weight: 500;
+    color: var(--main-color)
 }
 .services-box:hover a{
     color: #8b8a8f;
 }
-
 .contact-form{
     display: grid;
     place-items: center;
-    margin-top: 2rem;   
+    /* Aplicar items na vertical ou horizontal */
+    margin-top: 2rem;
 }
 .contact-form form{
     display: flex;
     flex-direction: column;
-    width: 650px; 
+    width: 650px;
 }
 
 form input, textarea{
@@ -336,13 +350,12 @@ form input, textarea{
     color: var(--text-color);
 }
 
-form input::placeholder,
-textarea::placeholder {
+form input::placeholder, textarea::placeholder{
     color: var(--text-color)
 }
 
 form textarea{
-    resize: none;
+    resize: none;  /*  NÃO vai trocar de tamanho */
     height: 200px;
 }
 
@@ -356,6 +369,7 @@ form textarea{
     letter-spacing: 1px;
     margin-left: 35%;
 }
+
 .contact-button:hover{
     background-color: var(--hover);
 }
@@ -364,12 +378,13 @@ form textarea{
     display: grid;
     place-items: center;
     padding: 20px;
-    color: #000; 
+    color: #000;
 }
+
 .footer h2{
-  font-size: 1.5rem;
-  margin-top: 1.6rem;
-  color: var(--text-color)
+    font-size: 1.5rem;
+    margin-top: 1.6rem;
+    color: var(--text-color);
 }
 
 .footer-social a i{
@@ -377,8 +392,8 @@ form textarea{
     font-size: 25px;
     margin-left: 10px;
     text-align: center;
-    line-height: 40px;
     background-color: #fff;
+    line-height: 40px;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -393,35 +408,33 @@ form textarea{
 
 .copyright a{
     color: #22cf91;
-}
+} 
 
 @media (max-width: 991px){
-    header{
+    .header{
         padding: 18px 4%;
     }
-    section{
+    .section{
         padding: 50px 4%;
     }
 }
-
 @media (max-width: 881px){
-
     :root{
         --big-font: 2.7rem;
-        --medium-font: 1.4rem
+        --medium-font: 1.4rem;
     }
 }
 @media (max-width: 768px){
     :root{
         --big-font: 2.4rem;
-        --medium-font: 1.2rem
+        --medium-font: 1.2rem;
     }
     header{
-        padding: 11px 4%;
+        padding: 11px 4%;    
     }
-    #menu-icon {   
-        display: initial;
-        color: var(--text-color);
+    #menu-icon{
+        display: initial; /* Habilitamos o ícone(que estava como HIDDEN) */
+        color: var(--text-color)
     }
     header .navbar{
         position: absolute;
@@ -433,10 +446,11 @@ form textarea{
         background: var(--bg-color);
         box-shadow: 0 4px 4px rgb(0 0 0 /10%);
         transition: 0.2s ease;
+        /* ease-> delay */
         text-align: center;
     }
-    .navbar.active{
-        top: 100%
+    .navbar .active{
+        top: 100%;        
     }
     .navbar a{
         padding: 1.5rem;
@@ -454,7 +468,6 @@ form textarea{
     .home-img{
         order: initial;
     }
-
     .about-container{
         grid-template-columns: 1fr;
     }
@@ -462,27 +475,26 @@ form textarea{
         display: flex;
         justify-content: center;
     }
-    .skills-container {
+    .skills-container{
         grid-template-columns: 1fr;
     }
     .skills-img img{
         padding-left: 0;
     }
-
-    .skills-img {
+    .skills-img{
         padding-top: 2rem;
         display: flex;
         justify-content: center;
     }
-
     .contact-form form{
-        width: 300px;
+        width: 300px
     }
     .contact-button{
-        margin-left: 25%;
+        margin-left:23%;
     }
 }
-@media (max-width:340px){
+
+@media (max-width: 340px){
     :root{
         --big-font: 1.7rem;
         --medium-font: 1.1rem;
@@ -495,16 +507,14 @@ form textarea{
         font-weight: 500;
     }
     .information .info-box span{
-        
         font-size: 1rem;
     }
+
     .contact-form form{
-        
         width: 300px;
     }
-
     .contact-button{
-        
         margin-left: 25%;
     }
 }
+
