@@ -34,7 +34,12 @@ body.active{
 
 body{
     background: var(--bg-color);
-    color: var(--main-color);
+    color: var(--text-color);
+}
+
+*::selection{
+    color: var(--bg-color);
+    background: var(--main-color);
 }
 
 .heading{

@@ -31,9 +31,13 @@ body.active{
 }
 body{
     background:  var(--bg-color);
-    color: var(--main-color);
+    color: var(--text-color);
 }
 
+*::selection{
+    color: var(--bg-color);
+    background: var(--main-color);
+}
 .heading{
     
     text-align: center;
@@ -410,11 +414,21 @@ form textarea{
         --big-font: 2.7rem;
         --medium-font: 1.4rem
     }
+    .services-box{
+        width: 230px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    }
 }
 @media (max-width: 768px){
     :root{
         --big-font: 2.4rem;
         --medium-font: 1.2rem
+    }
+    .services-content{
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    }
+    .services-box{
+        width: 200px;
     }
     header{
         padding: 11px 4%;
@@ -487,6 +501,7 @@ form textarea{
         --big-font: 1.7rem;
         --medium-font: 1.1rem;
     }
+    
     .home-text span{
         font-size: 1rem;
     }
