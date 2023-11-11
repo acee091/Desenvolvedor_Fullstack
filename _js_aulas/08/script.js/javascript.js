@@ -154,26 +154,52 @@
 // console.log(boeing[asas]);
 // console.log(Aviao.prototype[asas]);
 
-class Post {
-    constructor(titulo, descricao, tags){
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.tags = tags;
-    }
+// class Post {
+//     constructor(titulo, descricao, tags){
+//         this.titulo = titulo;
+//         this.descricao = descricao;
+//         this.tags = tags;
+//     }
 
-    get exibirTitulo(){
-        return `Você está lendo: ${this.titulo}`
-    }
+//     get exibirTitulo(){
+//         return `Você está lendo: ${this.titulo}`
+//     }
 
-    set adicionarTags(tags){
-        // split = separar
-        const tagsArray = tags.split(", ");
-        this.tags = tagsArray;
+//     set adicionarTags(tags){
+//         // split = separar
+//         const tagsArray = tags.split(", ");
+//         this.tags = tagsArray;
+//     }
+// }
+
+// const myPost = new Post("Algum post", "É um post sobre programação");
+// console.log(myPost.exibirTitulo); 
+
+// myPost.adicionarTags = "programação, javascript, js"
+// console.log(myPost);
+
+class Mamifero {
+    constructor(patas){
+        this.patas = patas;
     }
 }
 
-const myPost = new Post("Algum post", "É um post sobre programação");
-console.log(myPost.exibirTitulo); 
+// herdar caracteristicas
+// enviar esse valor para a classe mamifero
+// Lobo classe filho Mamifero classe pai
+class Lobo extends Mamifero {
+    constructor (patas, nome){
+        // super -> enviar o valor do lobo para o valor do mamifero
+        super(patas, patas);
+        this.nome = nome;
+    }
+}
 
-myPost.adicionarTags = "programação, javascript, js"
-console.log(myPost);
+const shark = new Lobo(4, "Shark");
+console.log(shark);
+
+console.log(shark instanceof Lobo);
+// Lobo não é pai de Mamifero = false
+console.log(Lobo instanceof Mamifero);
+
+
