@@ -15,7 +15,7 @@ body{
 
 .container{
     background-color: #fff;
-    height: 206px;
+    height: 260px;
     width: 400px;
     border-radius: 10px;
     padding: 20px;
@@ -42,5 +42,52 @@ body{
 }
 
 .container #qr-form{
-    
+    margin: 20px 15px;
+}
+
+#qr-form input,
+#qr-form button{
+    width: 100%;
+    height: 55px;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    outline: none;
+}
+
+#qr-form input{
+    border: 1px solid #777;
+    padding: 10px 15px;
+}
+
+#qr-form button{
+    background-color: #086824;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 20px;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+#qr-form button:hover{
+    opacity: 1;
+}
+
+.container #qr-code{
+    display: flex;
+    /* aplicar um evento javascript */
+    pointer-events: none;
+    border: 1px solid #ccc;
+    opacity: 0;
+    padding: 30px 0;
+    margin: 20px 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container.active #qr-code{
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s;
 }
