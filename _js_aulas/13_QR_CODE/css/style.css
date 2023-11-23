@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #34db7a;
+}
+
+.container{
+    background-color: #fff;
+    height: 206px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.2;
+}
+
+.container .active{
+    height: 500px;
+}
+
+#qr-header{
+    text-align: center;
+}
+
+#qr-header h1{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#qr-header p{
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.container #qr-form{
+    
+}
