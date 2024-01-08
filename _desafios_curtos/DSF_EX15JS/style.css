@@ -41,12 +41,27 @@ body {
   margin: 0;
   opacity: 0;
 }
+.panel p {
+  font-size: 15px;
+  position: absolute;
+  display: none;
+}
 
 .panel.active {
   flex: 5;
 }
+.panel.active p{
+  flex: 3;
+  bottom: 20px;
+  left: 5px;
+  justify-content: center;
+  display: flex;
+
+
+}
 
 .panel.active h3 {
+    top: 150px;
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
