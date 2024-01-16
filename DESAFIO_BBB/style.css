@@ -1,0 +1,51 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color:rgb(255, 255, 255);
+}
+* {
+  box-sizing: border-box;
+}
+header{
+    display: flex;
+    background-color: rgb(120,21,166);;
+}
+.nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.nav a{
+    text-decoration: none;
+}
+.redes-sociais ul{
+    display: flex;
+    list-style-type: none;
+    color: rgb(255,97,4);
+}
+.redes-sociais ul li{
+   font-size: 30px;
+}
+.line{
+    position: relative;
+    top: -15px;
+    border-bottom: 5px solid yellow;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.texto-header h1{
+    color: #fff;
+}
+.texto-header h2{
+    color: #fff;
+    font-size: 20px;
+    width: 300px;
+}
+
+/* CORES DO BBB
+roxo: rgb(120,21,166)
+LARANJA: rgb(255,97,4)
+AZUL: rgb(3,191,241) */
