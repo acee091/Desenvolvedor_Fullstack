@@ -27,27 +27,32 @@ header {
 
 .nav {
     background-color: #000000;
-    width: auto;
-    height: 50px;
+    height: 55px;
+    width: 100%;
+    padding: 50px;
 }
 
 .nav ul {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style-type: none;
+    font-size: 30px;
 }
 
 .nav a {
     text-decoration: none;
+    color: #fff;
 }
 
 .redes-sociais {
     display: none;
 }
 
-.redes-sociais .active {
-    display: inline-block;
+.redes-sociais .show{
+    display: flex;
+    width: 200px;
+    margin-top: 20px;
 }
 
 .redes-sociais ul {
@@ -64,7 +69,15 @@ header {
     justify-content: end;
     align-items: flex-end;
 }
-
+.btn-redes{
+    margin-top: 10px;
+    background-color: rgb(0, 16, 242);
+    color: #ffffff;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+}
 .line {
     position: relative;
     top: -13px;
@@ -102,11 +115,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgb(255, 97, 4);
 }
 
 .apresentacao {
-    background-color: rgb(120, 21, 166);
-    box-shadow: 10px 10px 10px;
+    box-shadow: 10px 10px 10px 10px;
     margin: 15px;
     text-align: center;
     width: 100%;
@@ -115,13 +128,14 @@ header {
 }
 
 .apresentacao h1 {
+    color: rgb(120, 21, 166);
     font-size: 40px;
     margin: 5px 0px 5px 0px;
 }
 
 .apresentacao p {
     font-size: 22px;
-    font-weight: 500;
+    font-weight: bold;
     margin: 10px;
 }
 
@@ -160,7 +174,7 @@ li{
     }
 ul.gallery li a {
     float:left;
-    padding: 10px 10px 25px 10px;
+    padding: 10px 10px 45px 10px;
     background: #eee;
     border: 1px solid #fff;
     margin-bottom: 15px;
@@ -176,12 +190,12 @@ ul.gallery li a {
     margin-left: 100px;
 }
 .galeria h1{
-    font-size: 30px;
-    margin-left: 100px;
+    font-size: 50px;
+    margin-left: 150px;
 }
 .gallery img {
     width: 250px;
-    height: 250px;
+    height: 350px;
     position: relative;
     opacity: 0.70;
 }
