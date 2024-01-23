@@ -26,7 +26,7 @@ header {
 }
 
 .nav {
-    background-color: #000000;
+    background-color: rgb(120, 21, 166);
     height: 55px;
     width: 100%;
     padding: 50px;
@@ -46,10 +46,10 @@ header {
 }
 
 .redes-sociais {
-    display: none;
+    display: flex;
 }
 
-.redes-sociais .show{
+.redes-sociais{
     display: flex;
     width: 200px;
     margin-top: 20px;
@@ -202,4 +202,8 @@ ul.gallery li a {
 
 img:hover {
     opacity: 1;
+}
+
+.chamadabbb{
+    margin-bottom: 200px;
 }
