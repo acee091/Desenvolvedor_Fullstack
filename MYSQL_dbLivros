@@ -1,0 +1,96 @@
+create database db_MeusLivros;
+show databases;
+use db_MeusLivros;
+
+-- mostra o banco de dados selecionado
+select database();
+
+create table tbl_Autores(
+IdAutor SMALLINT AUTO_INCREMENT,
+NomeAutor VARCHAR(50) NOT NULL,
+SobrenomeAutor VARCHAR(60) NOT NULL,
+CONSTRAINT pk_id_autor PRIMARY KEY (IdAutor)
+);
+
+-- Descreve toda a tabela
+DESCRIBE tbl_Autores;
+SHOW COLUMNS FROM tbl_Autores;
+
+CREATE TABLE tbl_Editora(
+IdEditora SMALLINT PRIMARY KEY AUTO_INCREMENT,
+Nome_Editora VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE tbl_Assunto(
+IdAssunto TINYINT AUTO_INCREMENT,
+Nome_Assunto VARCHAR(25) NOT NULL,
+CONSTRAINT pk_id_assunto PRIMARY KEY (IdAssunto)
+);
+
+CREATE TABLE tbl_Livros(
+IdLivro SMALLINT AUTO_INCREMENT,
+Nome_Livro VARCHAR(100) NOT NULL,
+ISBN VARCHAR(13) NOT NULL,
+IdAutor SMALLINT NOT NULL,
+IdEditora SMALLINT NOT NULL,
+IdAssunto TINYINT NOT NULL,
+DATAPUB DATE,
+PRECO DECIMAL(10,2) NOT NULL,
+NumeroPaginas SMALLINT NOT NULL,
+CONSTRAINT pk_id_livro PRIMARY KEY (IdLivro),
+CONSTRAINT fk_id_editora FOREIGN KEY (IdEditora) REFERENCES tbl_Editora
+(IdEditora) ON DELETE CASCADE,
+CONSTRAINT fk_id_assunto FOREIGN KEY (IdAssunto) REFERENCES tbl_Assunto
+(IdAssunto) ON DELETE CASCADE
+);
+
+CREATE TABLE tbl_LivrosAutores(
+IdLivro SMALLINT NOT NULL,
+IdAutor SMALLINT NOT NULL, 
+CONSTRAINT pk_id_livro_autor PRIMARY KEY(IdLivro, IdAutor),
+CONSTRAINT pk_id_livro FOREIGN KEY(IdLivro) REFERENCES tbl_Livros(IdLivro),
+CONSTRAINT pk_id_autor FOREIGN KEY(IdAutor) REFERENCES tbl_Autores(IdAutor)
+);
+
+show tables;
+
+CREATE TABLE tbl_EmprestimoLivro(
+IdEmprestimo TINYINT PRIMARY KEY,
+NomeLivro VARCHAR(60) NOT NULL,
+NomeEmprestador VARCHAR(50) NOT NULL,
+DataEmprestimo DATE NOT NULL,
+Duracao TINYINT NOT NULL
+);
+
+-- RENOMEAR UMA TABELA
+rename table tbl_EmprestimoLivro to tbl_Emprestimo;
+
+/* EXCLUIR COLUNAS 
+ALTER TABLE tbl_tabela 
+DROP COLUMN Edicao*/
+select * from tbl_Livros;
+-- adicionar uma coluna na tabela livros
+ALTER TABLE tbl_Livros
+ADD Edicao tinyint;
+-- retirando uma coluna
+ALTER TABLE tbl_Livros
+DROP Edicao;
+
+-- descrever os tipos de restrição de uma coluna
+describe tbl_emprestimo;
+
+-- modificar uma restrição de uma coluna
+ALTER TABLE tbl_Emprestimo modify column IdEmprestimo smallint;
+
+drop table tbl_emprestimo;
+
+INSERT INTO tbl_Autores(NomeAutor,  SobrenomeAutor)
+VALUES ('Daniel', 'Barret'), ('Gerald', 'Carter');
+
+select * from tbl_Autores;
+
+INSERT INTO tbl_Autores(NomeAutor,  SobrenomeAutor)
+VALUES ('Mark', 'Sobell'), ('Willian', 'Stanek'), ('Richard', 'Blum'), ('Christine', 'Bresnhan'),
+('Richard', 'Silverman'), ('Robert', 'Byrnes'), ('Jay', 'Ts'), ('Robert', 'Eckstein'),
+('Paul', 'Horowitz'), ('Winfield', 'Hill'), ('Joel', 'Murach'), ('Paul', 'Scherz'), ('Simon', 'Monk');
+
