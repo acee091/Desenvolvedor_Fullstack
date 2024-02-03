@@ -1,0 +1,64 @@
+create database db_vendas;
+-- EX 1
+use db_vendas;
+
+-- EX 2
+CREATE TABLE Produto(
+Codigo_Produto INTEGER,
+Descricao_Produto VARCHAR(30),
+Preco_Produto FLOAT,
+CONSTRAINT pk_codigo_produto PRIMARY KEY (Codigo_Produto)
+);
+
+-- EX 3
+CREATE TABLE Nota_Fiscal(
+Numero_NF INTEGER,
+Data_NF DATE,
+Valor_NF FLOAT,
+CONSTRAINT pk_numero_nf PRIMARY KEY (Numero_NF)
+);
+
+-- EX 4
+CREATE TABLE Itens(
+Produto_Codigo_Produto INTEGER,
+Nota_Fiscal_Numero_NF INTEGER,
+Num_Item INTEGER,
+Qtde_Item INTEGER,
+CONSTRAINT pk_produto_nf PRIMARY KEY (Produto_Codigo_Produto, Nota_Fiscal_Numero_NF),
+CONSTRAINT fk_codigo_produto FOREIGN KEY(Produto_Codigo_Produto) REFERENCES Produto(Codigo_Produto),
+CONSTRAINT fk_numero_nf FOREIGN KEY(Nota_Fiscal_Numero_NF) REFERENCES Nota_Fiscal(Numero_NF)
+);
+
+-- EX 5
+ALTER TABLE Produto modify column Descricao_Produto VARCHAR(50);
+DESCRIBE Produto;
+
+-- EX 6
+ALTER TABLE Nota_Fiscal ADD COLUMN ICMS FLOAT after Numero_Nf;
+DESCRIBE Nota_Fiscal;
+
+-- EX 7
+ALTER TABLE Produto ADD COLUMN Peso FLOAT;
+DESCRIBE Produto;
+
+-- EX 8
+ALTER TABLE Itens DROP PRIMARY KEY;
+ALTER TABLE Itens ADD CONSTRAINT fk_Num_Item PRIMARY KEY(Num_Item);
+
+-- EX 09
+SELECT * FROM Produto;
+
+-- EX 10
+SELECT * FROM Nota_Fiscal;
+
+-- EX 11
+ALTER TABLE Nota_Fiscal CHANGE Valor_NF ValorTotal_NF VARCHAR(50);
+
+-- EX 12
+ALTER TABLE Nota_Fiscal drop column Data_NF;
+
+-- EX 13
+drop table Itens;
+
+-- Ex 14
+RENAME TABLE Nota_Fiscal to Venda;
