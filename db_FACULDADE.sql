@@ -64,13 +64,15 @@ from tbl_matricula M
 INNER JOIN tbl_curso C ON C.codigo = M.curso
 GROUP BY M.curso;
 
--- 4.Exibir o nome de todos os cursos e quantos alunos tem matriculados em cada um (Obs.Caso algum curso não tenha matrículas, exibir número de alunos =0). NF
+-- 4.Exibir o nome de todos os cursos e quantos alunos tem matriculados em cada um (Obs.Caso algum curso não tenha matrículas, exibir número de alunos =0).
 SELECT C.nome Curso, count(*) 'Quantidade de Alunos'
 from tbl_matricula M
 INNER JOIN tbl_curso C ON C.codigo = M.curso
-GROUP BY C.nome
-HAVING count(*) IS NULL = 0;
-
+GROUP BY M.curso
+UNION
+SELECT c.nome, 0
+FROM tbl_curso C
+WHERE c.codigo NOT IN(SELECT DISTINCT M.curso FROM tbl_matricula M);
 
 -- 5. Exibir o nome do curso e o valor total recebido das matrículas em cada um deles V
 SELECT C.nome, sum(valor)
@@ -78,11 +80,11 @@ FROM tbl_matricula M
 INNER JOIN tbl_curso C ON C.codigo = M.curso
 GROUP BY C.codigo;
 
--- 6. Exibir o nome do curso, o valor total recebido das matrículas em cada um deles e o totalarrecadado em matrículas pela escola. NF
-SELECT C.nome, sum(valor), sum(valor) TOTAL
-FROM tbl_matricula M
-INNER JOIN tbl_curso C ON C.codigo = M.curso
-GROUP BY C.codigo;
+-- 6. Exibir o nome do curso, o valor total recebido das matrículas em cada um deles e o totalarrecadado em matrículas pela escola.
+SELECT C.nome, sum(valor) Matricula, (SELECT sum(valor) FROM tbl_matricula) 'Valor Total'
+FROM tbl_curso C
+INNER JOIN tbl_Matricula M ON C.codigo = M.curso
+GROUP BY c.nome;
 
 -- 7. Exibir o valor médio pago em matrícula na escola. Chamar a coluna que exibirá a médiade valor médio e seu conteúdo deve ser exibido com 2 casas decimais V
 SELECT round(avg(valor),2) Media 
@@ -114,7 +116,7 @@ SELECT C.nome, C.data_inicio
 from tbl_curso C
 INNER JOIN tbl_matricula M
 WHERE month(data_inicio) = '01'
-HAVING count(M.ra) > 1;
+HAVING count(M.ra) >= 1;
 -- 13 Exiba todos os cursos com início em janeiro de 2008 independente de ter alunos matriculados ou não. V
 SELECT C.nome, C.data_inicio
 from tbl_curso C
